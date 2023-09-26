@@ -1,0 +1,15 @@
+body{
+    color:black;
+    background-color: white;
+    margin:auto;
+    max-width:600px;
+
+}
+p{
+    line-height:1.7;
+}
+article + article{
+    margin-top:3rem;
+    border-top: 1px solid gray;
+    padding-top:3rem;
+}
