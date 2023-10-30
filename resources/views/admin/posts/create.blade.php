@@ -1,5 +1,5 @@
 <x-layout>
-
+{{-- create post --}} 
     <section class="py-8 max-w-sm mx-auto">
         <h1 class="text-lg font-bold mb-4 text-center">Publish new post</h1>
         <x-panel class="" style="width:50rem; margin-left:-10rem;">
