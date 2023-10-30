@@ -26,19 +26,19 @@ class PostDataTable extends DataTable
         $dataTables->addIndexColumn();
         $dataTables->addColumn('action', function ($row) {
 
-                $action = '';
-                
-                $action .= '<a class="btn btn-info btn-sm m-2"    
-                href="/admin/posts/' . $row->id . '/edit"><i class="fas fa-pencil-alt"></i>Edit</a>';
-                                
-                $action .= '<a class="btn btn-danger btn-sm"    
-                href="/admin/posts/' . $row->id . '/delete"><i class="fas fa-trash">
-                </i>Delete</a>';
-            
-                $action .= '<a class="btn btn-info btn-sm m-2"    
-                href="/admin/posts/' . $row->id . '/view">View</a>';
+                    $action = '';
                     
-                return $action;
+                    $action .= '<a class="btn btn-info btn-sm m-2"    
+                    href="/admin/posts/' . $row->id . '/edit"><i class="fas fa-pencil-alt"></i>Edit</a>';
+                                    
+                    $action .= '<a class="btn btn-danger btn-sm"    
+                    href="/admin/posts/' . $row->id . '/delete"><i class="fas fa-trash">
+                    </i>Delete</a>';
+                
+                    $action .= '<a class="btn btn-info btn-sm m-2"    
+                    href="/admin/posts/' . $row->id . '/view">View</a>';
+                        
+                    return $action;
         })
         ->editColumn('created_at', function (Post $post) {
             return \Carbon\Carbon::parse($post->created_at )->isoFormat('DD-MM-YYYY');

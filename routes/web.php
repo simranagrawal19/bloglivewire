@@ -48,5 +48,3 @@ Route::patch('admin/posts/{post}', [AdminPostController::class, 'update'])->midd
 Route::get('admin/posts/{post}/delete', [AdminPostController::class, 'destroy'])->middleware('admin');
 Route::get('admin/posts/{post}/view', [AdminPostController::class, 'show'])->middleware('admin');
 Route::get('/admin/posts', [AdminPostController::class,'table'])->name('admin/posts');
-
-// Route::post('/filter', [AdminPostController::class, 'filter']);

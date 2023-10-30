@@ -28,23 +28,6 @@ class AdminPostController extends Controller
         return view('admin/posts.create');
     }
 
-    // public function store()
-    // {
-      
-    //     $attributes = request()->validate([
-    //         'title' => 'required',
-    //         'thumbnail' => 'required|image',
-    //         'slug' => ['required', Rule::unique('posts', 'slug')],
-    //         'excerpt' => 'required',
-    //         'body' => 'required',
-    //         'category_id' => ['required', Rule::exists('categories', 'id')],
-    //     ]);
-    //     $attributes['user_id'] = auth()->id();
-    //     $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
-    //     Post::create($attributes);
-    //     return redirect('/');
-    // }
-
     public function store(StorePostRequest $request)
     {
         $post = new Post();
@@ -64,24 +47,6 @@ class AdminPostController extends Controller
         $post = Post::find($post->id);
         return view('admin/posts.edit', ['post' => $post]);
     }
-
-    // public function update(Post $post)
-    // {
-    //     $attributes = request()->validate([
-    //         'title' => 'required',
-    //         'thumbnail' => 'required|image',
-    //         'slug' => ['required', Rule::unique('posts', 'slug')->ignore($post->id)],
-    //         'excerpt' => 'required',
-    //         'body' => 'required',
-    //         'category_id' => ['required', Rule::exists('categories', 'id')],
-
-    //     ]);
-
-    //     $post->update($attributes);
-        
-    //     return redirect('/')->with('success', 'Post Updated');
-
-    // }
 
     public function update(UpdateRequest $request)
     {
@@ -104,13 +69,8 @@ class AdminPostController extends Controller
 
     public function table(PostDataTable $dataTable)
     {
-        // dd(request()->all());
-        // $todayDate = Carbon::now()->format('Y-m-d');
-        // $data = request()->all();
-        
-        return $dataTable->render('admin/posts.table');
 
-        
+        return $dataTable->render('admin/posts.table');
 
     }
 
@@ -120,16 +80,5 @@ class AdminPostController extends Controller
         return view('admin/posts.show', ['post' => $post]);
         
     }
-    
-    // public function filter(Request $request)
-    // {
-    //     $start_date = $request->start_date;
-    //     $end_date = $request->end_date;
-
-    //     $post = Post::whereDate('created_at', '>=', $start_date)
-    //         ->whereDate('created_at', '<=', $end_date)
-    //         ->get();
-    //         return view('admin/posts.table', compact(['post']));
-    // }
 
 }
